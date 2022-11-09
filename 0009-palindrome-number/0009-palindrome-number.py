@@ -4,7 +4,6 @@ class Solution:
             return False
 
         rev = 0
-
         while x > rev:
             rev = rev * 10 + x % 10
             x //= 10
