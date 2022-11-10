@@ -1,19 +1,9 @@
 class Solution {
-public:
+  public:
     string longestCommonPrefix(vector<string> &strs) {
-        string shortest =
-            *min_element(strs.begin(), strs.end(), [](auto &left, auto &right) {
-                return (left.length() < right.length());
-            });
-
-        for (int i = 0; i < shortest.length(); ++i) {
-            if (any_of(strs.begin(), strs.end(), [&](string &word) {
-                    return (word[i] != shortest[i]);
-                })) {
-                return shortest.substr(0, i);
-            }
-        }
-        
-        return shortest;
+        for (int i = 0;; ++i)
+            if (any_of(strs.begin(), strs.end(),
+                       [&](auto &str) { return !str[i] || str[i] != strs[0][i]; }))
+                return strs[0].substr(0, i);
     }
 };
