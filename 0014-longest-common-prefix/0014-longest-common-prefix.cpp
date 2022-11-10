@@ -1,5 +1,5 @@
 class Solution {
-  public:
+public:
     string longestCommonPrefix(vector<string> &strs) {
         for (int i = 0;; ++i)
             if (any_of(strs.begin(), strs.end(),
