@@ -6,7 +6,7 @@ public:
             {'C', 100}, {'D', 500}, {'M', 1000}};
         int ans = 0, prev = 0, cur = 0;
 
-        for (reverse_iterator rit = s.rbegin(); rit != s.rend(); ++rit) {
+        for (auto rit = s.rbegin(); rit != s.rend(); ++rit) {
             prev = cur;
             cur = translation[*rit];
 
